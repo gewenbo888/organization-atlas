@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organization Atlas — Cross-Species System of Coordination & Collective Intelligence | 组织图谱</title>
+<meta name="description" content="A cross-species atlas of how systems organize. 11 organizational types — bees, ants, whales, trees, mycelium, primates, corporations, blockchains, AI swarms — compared on 6 dimensions, with simulation, trade-offs, and reusable design principles. Bilingual EN / 中文.">
+<meta name="keywords" content="organization, collective intelligence, swarm, ant colony, whale pod, mycelium, blockchain, AI agents, distributed systems, coordination, 组织图谱, 集体智能, 群体智能">
+<meta name="author" content="Gewenbo">
+<link rel="canonical" href="https://org.psyverse.fun/">
+<link rel="alternate" hreflang="en" href="https://org.psyverse.fun/">
+<link rel="alternate" hreflang="zh-CN" href="https://org.psyverse.fun/">
+<link rel="alternate" hreflang="x-default" href="https://org.psyverse.fun/">
+<meta property="og:title" content="Organization Atlas — Cross-Species System of Coordination">
+<meta property="og:description" content="11 organizational types across 6 dimensions. From ants to AI agents.">
+<meta property="og:url" content="https://org.psyverse.fun/">
+<meta property="og:site_name" content="Psyverse">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Organization Atlas · 组织图谱">
+<meta name="twitter:description" content="A cross-species comparison engine for organization itself.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0e1410">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Organization Atlas","alternateName":"组织图谱","description":"A cross-species atlas of organization, coordination, and collective intelligence.","url":"https://org.psyverse.fun/","inLanguage":["en","zh-CN"],"author":{"@type":"Person","name":"Gewenbo","url":"https://psyverse.fun/"},"publisher":{"@type":"Organization","name":"Psyverse","url":"https://psyverse.fun/"}}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e1410'/><circle cx='16' cy='16' r='3' fill='%23a8c97f'/><circle cx='8' cy='10' r='1.6' fill='%23a8c97f'/><circle cx='24' cy='10' r='1.6' fill='%23a8c97f'/><circle cx='8' cy='22' r='1.6' fill='%23a8c97f'/><circle cx='24' cy='22' r='1.6' fill='%23a8c97f'/><line x1='16' y1='16' x2='8' y2='10' stroke='%23a8c97f' stroke-width='.8'/><line x1='16' y1='16' x2='24' y2='10' stroke='%23a8c97f' stroke-width='.8'/><line x1='16' y1='16' x2='8' y2='22' stroke='%23a8c97f' stroke-width='.8'/><line x1='16' y1='16' x2='24' y2='22' stroke='%23a8c97f' stroke-width='.8'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://analytics-dashboard-two-blue.vercel.app/tracker.js" defer></script>
+<style>
+:root{
+  --night:#0e1410; --night-2:#16201b; --night-3:#1f2a25; --rim:#2c3a32;
+  --bone:#e8e1c8; --bone-2:rgba(232,225,200,.65); --bone-3:rgba(232,225,200,.32);
+  --line:rgba(232,225,200,.13); --line-strong:rgba(232,225,200,.28);
+  --moss:#a8c97f;          /* signature green */
+  --amber:#e0a04a;         /* warm pollen */
+  --slate:#7a96b8;         /* cool digital */
+  --rust:#c66e4a;          /* mammalian warmth */
+  --plum:#b88fb5;          /* primate */
+  --display:'Fraunces',serif;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--night);color:var(--bone);
+  font-family:var(--display);font-size:1.05rem;line-height:1.7;-webkit-font-smoothing:antialiased;
+  min-height:100vh;overflow-x:hidden;
+}
+body.zh{font-family:'Noto Serif SC',serif;}
+body.zh .display{font-family:'Noto Serif SC',serif;}
+.display{font-family:var(--display);letter-spacing:-.012em;font-weight:500;}
+.mono{font-family:var(--mono);}
+.sans{font-family:var(--sans);}
+a{color:var(--moss);text-decoration:none;}
+a:hover{color:var(--amber);}
+
+.bg{position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(circle at 22% 18%,rgba(168,201,127,.06) 0%,transparent 50%),
+    radial-gradient(circle at 78% 82%,rgba(224,160,74,.05) 0%,transparent 50%),
+    var(--night);}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(14,20,16,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:1320px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:20px;}
+.brand{display:flex;align-items:center;gap:12px;font-weight:500;}
+.brand-mark{width:38px;height:38px;background:var(--night-2);border:1px solid var(--moss);display:grid;place-items:center;position:relative;}
+.brand-mark::after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:var(--moss);}
+.brand-mark::before{content:"";position:absolute;inset:6px;border:1px solid rgba(168,201,127,.4);border-radius:50%;}
+.brand-text{font-family:var(--display);font-size:1.32rem;font-weight:500;letter-spacing:-.005em;}
+.brand-text small{display:block;font-family:var(--mono);font-size:.66rem;color:var(--bone-3);letter-spacing:.16em;text-transform:uppercase;margin-top:1px;}
+.nav-links{display:flex;gap:18px;margin-left:auto;flex-wrap:wrap;}
+.nav-links a{color:var(--bone-2);font-size:.78rem;font-weight:500;transition:color .15s;font-family:var(--mono);text-transform:lowercase;letter-spacing:.04em;}
+.nav-links a:hover{color:var(--moss);}
+.lang-btn{padding:6px 14px;border:1px solid var(--line-strong);background:transparent;color:var(--bone);border-radius:0;font-family:var(--mono);font-size:.78rem;cursor:pointer;transition:all .15s;letter-spacing:.06em;}
+.lang-btn:hover{border-color:var(--moss);color:var(--moss);}
+@media(max-width:1100px){.nav-links{display:none;}}
+
+section{padding:110px 32px;position:relative;}
+.wrap{max-width:1320px;margin:0 auto;}
+.eyebrow{display:inline-block;font-family:var(--mono);font-size:.74rem;color:var(--moss);letter-spacing:.22em;text-transform:uppercase;padding:5px 0 5px 18px;border-left:2px solid var(--moss);margin-bottom:24px;}
+h1{font-family:var(--display);font-size:clamp(2.8rem,7vw,6rem);line-height:1;letter-spacing:-.025em;margin-bottom:24px;font-weight:500;}
+h1 .it{font-style:italic;color:var(--moss);}
+h2{font-family:var(--display);font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:14px;font-weight:500;}
+h3{font-family:var(--display);font-size:1.5rem;font-weight:500;margin-bottom:8px;}
+h4{font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--moss);margin-bottom:14px;}
+.lede{font-size:1.18rem;color:var(--bone-2);max-width:820px;line-height:1.75;font-style:italic;}
+.lede em{color:var(--amber);}
+.section-head{margin-bottom:48px;max-width:840px;}
+
+/* HERO */
+.hero{padding:170px 32px 80px;}
+.hero h1{max-width:1120px;}
+.hero h1 small{display:block;font-family:var(--mono);font-size:.92rem;font-weight:400;color:var(--bone-3);letter-spacing:.08em;margin-top:18px;}
+.hero .lede{margin-bottom:36px;font-size:1.22rem;}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{padding:13px 26px;border-radius:0;font-family:var(--mono);font-size:.82rem;font-weight:500;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;letter-spacing:.04em;}
+.btn-pri{background:var(--moss);color:var(--night);}
+.btn-pri:hover{background:var(--amber);}
+.btn-sec{background:transparent;border-color:var(--line-strong);color:var(--bone);}
+.btn-sec:hover{border-color:var(--moss);color:var(--moss);}
+
+.formula{margin-top:60px;padding:24px;background:var(--night-2);border:1px solid var(--line);max-width:920px;}
+.formula .label{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;color:var(--bone-3);margin-bottom:10px;text-transform:uppercase;}
+.formula .eq{font-family:var(--display);font-size:1.4rem;color:var(--bone);}
+.formula b{color:var(--moss);}
+
+/* MODULE 1 — TYPES LIBRARY */
+.types-stage{margin-top:30px;}
+.types-filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+.tf{padding:8px 14px;background:transparent;border:1px solid var(--line);color:var(--bone-2);font-family:var(--mono);font-size:.78rem;cursor:pointer;letter-spacing:.04em;transition:all .15s;}
+.tf.active,.tf:hover{border-color:var(--moss);color:var(--moss);background:rgba(168,201,127,.06);}
+.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:980px){.types-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.types-grid{grid-template-columns:1fr;}}
+.type-card{padding:24px;background:var(--night-2);border:1px solid var(--line);border-top:3px solid;cursor:pointer;transition:all .2s;}
+.type-card.swarm{border-top-color:var(--amber);}
+.type-card.pod{border-top-color:var(--slate);}
+.type-card.plant{border-top-color:var(--moss);}
+.type-card.primate{border-top-color:var(--plum);}
+.type-card.human{border-top-color:var(--rust);}
+.type-card.digital{border-top-color:var(--bone);}
+.type-card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.4);}
+.type-card .kind{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;}
+.type-card.swarm .kind{color:var(--amber);}
+.type-card.pod .kind{color:var(--slate);}
+.type-card.plant .kind{color:var(--moss);}
+.type-card.primate .kind{color:var(--plum);}
+.type-card.human .kind{color:var(--rust);}
+.type-card.digital .kind{color:var(--bone);}
+.type-card h5{font-family:var(--display);font-size:1.5rem;font-weight:500;margin:6px 0 6px;}
+.type-card .scientific{font-family:var(--display);font-style:italic;font-size:.86rem;color:var(--bone-3);margin-bottom:14px;}
+.type-card p{color:var(--bone-2);font-size:.92rem;line-height:1.7;margin-bottom:14px;}
+.type-card .stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:14px;}
+.type-stat{padding:8px 10px;background:var(--night);border:1px solid var(--line);}
+.type-stat .k{font-family:var(--mono);font-size:.66rem;color:var(--bone-3);letter-spacing:.1em;text-transform:uppercase;}
+.type-stat .v{font-family:var(--display);font-size:1rem;color:var(--moss);font-weight:600;}
+
+/* MODULE 2 — DIMENSIONS RADAR */
+.dim-stage{margin-top:30px;background:var(--night-2);border:1px solid var(--line);padding:30px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;}
+@media(max-width:980px){.dim-stage{grid-template-columns:1fr;}}
+.dim-radar{background:var(--night);border:1px solid var(--line);padding:20px;}
+.dim-radar svg{width:100%;height:480px;display:block;}
+.dim-side h5{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin-bottom:14px;}
+.dim-pickers{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+.dim-pick{padding:7px 12px;background:var(--night);border:1px solid var(--line);font-family:var(--mono);font-size:.74rem;color:var(--bone-2);cursor:pointer;transition:all .15s;}
+.dim-pick.active{background:rgba(168,201,127,.08);border-color:var(--moss);color:var(--moss);}
+.dim-pick.b.active{background:rgba(122,150,184,.08);border-color:var(--slate);color:var(--slate);}
+.dim-axes{display:flex;flex-direction:column;gap:8px;margin-top:14px;}
+.dim-axis-row{padding:10px 14px;background:var(--night);border:1px solid var(--line);}
+.dim-axis-row .name{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-3);}
+.dim-axis-row .scale{display:flex;justify-content:space-between;font-family:var(--display);font-style:italic;font-size:.84rem;color:var(--bone-2);margin-top:4px;}
+
+/* MODULE 3 — COORDINATION */
+.coord-stage{margin-top:30px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+@media(max-width:880px){.coord-stage{grid-template-columns:1fr;}}
+.coord-card{padding:24px;background:var(--night-2);border:1px solid var(--line);border-left:3px solid;}
+.coord-card.chem{border-left-color:var(--amber);}
+.coord-card.vocal{border-left-color:var(--slate);}
+.coord-card.touch{border-left-color:var(--plum);}
+.coord-card.signal{border-left-color:var(--moss);}
+.coord-card.digital{border-left-color:var(--bone);}
+.coord-card .kind{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;}
+.coord-card.chem .kind{color:var(--amber);}
+.coord-card.vocal .kind{color:var(--slate);}
+.coord-card.touch .kind{color:var(--plum);}
+.coord-card.signal .kind{color:var(--moss);}
+.coord-card.digital .kind{color:var(--bone);}
+.coord-card h5{font-family:var(--display);font-size:1.4rem;font-weight:500;margin:6px 0 6px;}
+.coord-card .examples{font-family:var(--mono);font-size:.78rem;color:var(--bone-3);margin-bottom:12px;font-style:italic;}
+.coord-card p{color:var(--bone);font-size:.92rem;line-height:1.7;margin-bottom:10px;}
+.coord-card .props{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);}
+.coord-prop{padding:8px;background:var(--night);border:1px solid var(--line);text-align:center;}
+.coord-prop .k{font-family:var(--mono);font-size:.62rem;color:var(--bone-3);letter-spacing:.1em;text-transform:uppercase;}
+.coord-prop .v{font-family:var(--display);font-size:.92rem;color:var(--moss);margin-top:2px;font-weight:600;}
+
+/* MODULE 4 — COLLECTIVE INTELLIGENCE */
+.ci-stage{margin-top:30px;background:var(--night-2);border:1px solid var(--line);padding:30px;}
+.ci-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:980px){.ci-grid{grid-template-columns:1fr;}}
+.ci-card{padding:22px;background:var(--night);border:1px solid var(--line);border-top:3px solid var(--amber);}
+.ci-card .lbl{font-family:var(--mono);font-size:.7rem;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;}
+.ci-card h5{font-family:var(--display);font-size:1.3rem;margin:6px 0 12px;}
+.ci-card p{font-size:.9rem;color:var(--bone-2);line-height:1.7;margin-bottom:10px;}
+.ci-card .case{margin-top:14px;padding:12px 14px;background:var(--night-2);border-left:2px solid var(--moss);font-family:var(--display);font-style:italic;font-size:.92rem;color:var(--bone);}
+.ci-card .case b{color:var(--moss);font-style:normal;}
+
+/* MODULE 5 — SIMULATION */
+.sim-stage{margin-top:30px;background:var(--night-2);border:1px solid var(--line);padding:30px;}
+.sim-controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;align-items:center;}
+.sim-mode{padding:8px 16px;background:transparent;border:1px solid var(--line);color:var(--bone-2);font-family:var(--mono);font-size:.78rem;cursor:pointer;transition:all .15s;}
+.sim-mode.active,.sim-mode:hover{border-color:var(--moss);color:var(--moss);background:rgba(168,201,127,.06);}
+.sim-btn{padding:8px 18px;border:1px solid var(--line);background:var(--night);color:var(--bone);font-family:var(--mono);font-size:.78rem;cursor:pointer;letter-spacing:.06em;transition:all .15s;}
+.sim-btn:hover{border-color:var(--amber);color:var(--amber);}
+.sim-btn.primary{background:var(--moss);color:var(--night);border-color:var(--moss);}
+.sim-canvas-wrap{height:480px;background:var(--night);border:1px solid var(--line);position:relative;overflow:hidden;}
+.sim-canvas-wrap canvas{display:block;}
+.sim-stats{margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+@media(max-width:780px){.sim-stats{grid-template-columns:1fr 1fr;}}
+.sim-stat{padding:14px;background:var(--night);border:1px solid var(--line);}
+.sim-stat .k{font-family:var(--mono);font-size:.7rem;color:var(--bone-3);letter-spacing:.14em;text-transform:uppercase;}
+.sim-stat .v{font-family:var(--display);font-size:1.4rem;color:var(--moss);font-weight:600;line-height:1.1;margin-top:4px;}
+
+/* MODULE 6 — TRADE-OFFS */
+.to-stage{margin-top:30px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+@media(max-width:780px){.to-stage{grid-template-columns:1fr;}}
+.to-card{padding:24px;background:var(--night-2);border:1px solid var(--line);}
+.to-card .axis{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;margin-bottom:14px;font-family:var(--display);}
+.to-card .left,.to-card .right{padding:12px;background:var(--night);border:1px solid var(--line);text-align:center;}
+.to-card .left{border-left:3px solid var(--moss);}
+.to-card .right{border-right:3px solid var(--amber);}
+.to-card .left .name,.to-card .right .name{font-family:var(--display);font-size:1.04rem;font-weight:500;}
+.to-card .left .name small,.to-card .right .name small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--bone-3);letter-spacing:.06em;margin-top:2px;font-weight:400;}
+.to-card .vs{font-family:var(--mono);font-size:.74rem;color:var(--bone-3);letter-spacing:.14em;}
+.to-card p{font-size:.92rem;color:var(--bone-2);line-height:1.7;margin-top:8px;}
+.to-card .examples{margin-top:10px;font-family:var(--mono);font-size:.74rem;color:var(--bone-3);font-style:italic;}
+.to-card .examples b{color:var(--moss);font-style:normal;}
+
+/* MODULE 7 — CROSS COMPARISON */
+.cmp-stage{margin-top:30px;background:var(--night-2);border:1px solid var(--line);padding:30px;}
+.cmp-pickers{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:end;margin-bottom:24px;}
+@media(max-width:680px){.cmp-pickers{grid-template-columns:1fr;}}
+.cmp-pick{padding:14px 18px;background:var(--night);border:1px solid var(--line);}
+.cmp-pick label{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-3);margin-bottom:6px;}
+.cmp-pick select{width:100%;padding:8px 12px;background:var(--night-2);border:1px solid var(--line-strong);color:var(--bone);font-family:var(--display);font-size:1rem;font-weight:500;outline:none;cursor:pointer;}
+.cmp-vs{font-family:var(--display);font-size:1.7rem;color:var(--moss);text-align:center;font-style:italic;}
+.cmp-row{display:grid;grid-template-columns:1fr 200px 1fr;gap:14px;background:var(--night);border:1px solid var(--line);border-bottom:none;}
+.cmp-row:last-child{border-bottom:1px solid var(--line);}
+@media(max-width:780px){.cmp-row{grid-template-columns:1fr;}}
+.cmp-cell{padding:16px 22px;}
+.cmp-cell.label{background:var(--night-2);border-left:1px solid var(--line);border-right:1px solid var(--line);font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--moss);display:flex;align-items:center;justify-content:center;text-align:center;}
+.cmp-cell.a, .cmp-cell.b{font-family:var(--display);font-size:1rem;line-height:1.6;color:var(--bone);}
+
+/* MODULE 8 — DESIGN PRINCIPLES */
+.dp-stage{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:980px){.dp-stage{grid-template-columns:1fr;}}
+.dp-card{padding:30px;background:var(--night-2);border:1px solid var(--line);border-top:3px solid var(--moss);}
+.dp-card .num{font-family:var(--mono);font-size:.7rem;color:var(--moss);letter-spacing:.18em;}
+.dp-card .principle{font-family:var(--display);font-size:1.4rem;font-weight:500;font-style:italic;margin:6px 0 10px;color:var(--amber);}
+.dp-card p{color:var(--bone);font-size:.94rem;line-height:1.7;margin-bottom:10px;}
+.dp-card .from{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);font-family:var(--mono);font-size:.72rem;color:var(--bone-3);}
+.dp-card .from b{color:var(--moss);font-style:normal;}
+
+/* STRIPS */
+.strip{padding:74px 32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--night-2),var(--night));}
+.strip-quote{font-family:var(--display);font-size:clamp(1.7rem,3.4vw,2.6rem);font-style:italic;text-align:center;max-width:980px;margin:0 auto;line-height:1.32;letter-spacing:-.015em;}
+.strip-quote .accent{color:var(--moss);font-style:normal;}
+.strip-attr{text-align:center;font-family:var(--mono);font-size:.74rem;color:var(--bone-3);margin-top:20px;letter-spacing:.16em;text-transform:uppercase;}
+
+footer{padding:74px 32px 36px;border-top:1px solid var(--line);background:var(--night-2);}
+.foot-grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:2fr repeat(3,1fr);gap:32px;}
+@media(max-width:740px){.foot-grid{grid-template-columns:1fr 1fr;}}
+.foot-col h5{font-family:var(--mono);font-size:.7rem;color:var(--bone-3);letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;}
+.foot-col a{display:block;padding:5px 0;color:var(--bone-2);font-size:.86rem;transition:color .15s;}
+.foot-col a:hover{color:var(--moss);}
+.foot-bot{max-width:1320px;margin:32px auto 0;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:.74rem;color:var(--bone-3);}
+
+.fadeup{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s;}
+.fadeup.in{opacity:1;transform:translateY(0);}
+*::-webkit-scrollbar{width:8px;height:8px;}
+*::-webkit-scrollbar-track{background:var(--night);}
+*::-webkit-scrollbar-thumb{background:var(--rim);border-radius:0;}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-text">
+        <span data-en="Organization Atlas" data-zh="组织图谱"></span>
+        <small data-en="Cross-species coordination" data-zh="跨物种协调"></small>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#types" data-en="types" data-zh="类型"></a>
+      <a href="#dimensions" data-en="dimensions" data-zh="维度"></a>
+      <a href="#coordination" data-en="coordination" data-zh="协调"></a>
+      <a href="#intelligence" data-en="intelligence" data-zh="智能"></a>
+      <a href="#simulation" data-en="simulate" data-zh="模拟"></a>
+      <a href="#tradeoffs" data-en="trade-offs" data-zh="权衡"></a>
+      <a href="#compare" data-en="compare" data-zh="对比"></a>
+      <a href="#principles" data-en="principles" data-zh="原理"></a>
+    </div>
+    <button class="lang-btn" id="lang-btn">中文</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="padding:170px 32px 80px;">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span data-en="A CROSS-SPECIES SYSTEM OF COORDINATION & COLLECTIVE INTELLIGENCE" data-zh="一个跨物种的协调与集体智能系统"></span>
+    </div>
+    <h1>
+      <span data-en="Eleven ways to <span class='it'>organize</span>.<br>One pattern, <span class='it'>variations</span> everywhere." data-zh="十一种<span class='it'>组织</span>方式。<br>同一图样的，遍处<span class='it'>变奏</span>。"></span>
+      <small data-en="Bees · Ants · Whales · Trees · Mycelium · Potatoes · Chimps · Bonobos · Corporations · Blockchains · AI Swarms" data-zh="蜜蜂 · 蚂蚁 · 鲸 · 树 · 菌丝网 · 马铃薯 · 黑猩猩 · 倭黑猩猩 · 公司 · 区块链 · AI 群体"></small>
+    </h1>
+    <p class="lede">
+      <span data-en="Most "organization" thinking starts and ends with the corporate org chart. This atlas widens the lens. <em>Eleven systems</em> from across biology, sociology, and computation, compared on six axes — and then distilled into design principles you can carry into any system you build, organic or silicon." data-zh="大多数关于"组织"的思考始于公司组织架构，止于公司组织架构。本图谱拓宽镜头。来自生物学、社会学与计算领域的<em>十一个系统</em>，在六个维度上对比 —— 并提炼为可带入任何你所构建系统（有机的或硅基的）的设计原理。"></span>
+    </p>
+    <div class="cta-row">
+      <a href="#types" class="btn btn-pri"><span data-en="Browse types" data-zh="浏览类型"></span> →</a>
+      <a href="#simulation" class="btn btn-sec"><span data-en="Run simulation" data-zh="运行模拟"></span></a>
+    </div>
+
+    <div class="formula">
+      <div class="label" data-en="THE OPERATING EQUATION" data-zh="运行方程"></div>
+      <div class="eq"><b>Organization</b> = <b>Agents</b> + <b>Communication</b> + <b>Rules</b> + <b>Environment</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap">
+    <p class="strip-quote">
+      <span data-en="An <span class='accent'>organization</span> is not a thing.<br>It is what happens when <span class='accent'>many</span> become <span class='accent'>one</span>." data-zh="<span class='accent'>组织</span>不是一物。<br>它是<span class='accent'>众</span>成为<span class='accent'>一</span>时所发生的事。"></span>
+    </p>
+    <p class="strip-attr" data-en="— Organization Atlas · Premise" data-zh="— 组织图谱 · 前提"></p>
+  </div>
+</section>
+
+<!-- MODULE 1 — TYPES -->
+<section id="types">
+  <div class="wrap">
+    <div class="section-head">
+      <h4>Module 01 · <span data-en="Organization Types Library" data-zh="组织类型库"></span></h4>
+      <h2><span data-en="Eleven systems. Six categories." data-zh="十一种系统。六个类别。"></span></h2>
+      <p class="lede"><span data-en="From eusocial swarms to AI agent swarms, here are the eleven organizational forms this atlas tracks. Filter by category. Each card carries scale, communication mode, decision rule, and the canonical evolutionary or design fitness." data-zh="从真社会性群体到 AI 智能体群体，这是本图谱追踪的十一种组织形态。按类别筛选。每张卡片包含规模、通信方式、决策规则、与典型演化 / 设计适应度。"></span></p>
+    </div>
+
+    <div class="types-stage">
+      <div class="types-filter" id="types-filter"></div>
+      <div class="types-grid" id="types-grid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 2 — DIMENSIONS -->
+<section id="dimensions" style="background:linear-gradient(180deg,var(--night),var(--night-2),var(--night));">
+  <div class="wrap">
+    <div class="section-head">
+      <h4>Module 02 · <span data-en="Organizational Dimensions Engine" data-zh="组织维度引擎"></span></h4>
+      <h2><span data-en="Six axes, two systems, one shape." data-zh="六个维度，两个系统，一个形状。"></span></h2>
+      <p class="lede"><span data-en="Pick any two systems. The radar plots them on six axes — hierarchy, communication bandwidth, decision speed, conflict tolerance, scalability, robustness. The shape difference is the organizational difference, made visible." data-zh="任选两个系统。雷达图将其在六个维度上呈现 —— 层级、通信带宽、决策速度、冲突容忍、可扩展性、稳健性。形状之差，即组织之差，被可视化。"></span></p>
+    </div>
+
+    <div class="dim-stage">
+      <div class="dim-radar">
+        <svg id="dim-svg" viewBox="0 0 480 480" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+      <div class="dim-side">
+        <h5 data-en="System A · 绿色" data-zh="系统 A · 绿色"></h5>
+        <div class="dim-pickers" id="dim-pickers-a"></div>
+        <h5 data-en="System B · 蓝色" data-zh="系统 B · 蓝色" style="color:var(--slate);"></h5>
+        <div class="dim-pickers" id="dim-pickers-b"></div>
+        <div class="dim-axes" id="dim-axes"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 3 — COORDINATION -->
+<section id="coordination">
+  <div class="wrap">
+    <div class="section-head">
+      <h4>Module 03 · <span data-en="Coordination Mechanisms" data-zh="协调机制"></span></h4>
+      <h2><span data-en="How a thousand agents act as one." data-zh="千个个体如何作为一个行动。"></span></h2>
+      <p class="lede"><span data-en="Five fundamental mechanisms by which collectives synchronize their behavior. Each has bandwidth, latency, and reliability characteristics — and each evolved (or was engineered) to fit a specific physical regime." data-zh="集体同步行为的五种基本机制。每种都有其带宽、延迟、可靠性特征 —— 且各自演化（或被工程化）以适应特定的物理条件。"></span></p>
+    </div>
+
+    <div class="coord-stage" id="coord-stage"></div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap">
+    <p class="strip-quote">
+      <span data-en="Coordination is what <span class='accent'>medium</span><br>does to many <span class='accent'>minds</span>." data-zh="<span class='accent'>媒介</span>对许多<span class='accent'>心智</span>所做之事，<br>就是协调。"></span>
+    </p>
+    <p class="strip-attr" data-en="— Organization Atlas · Postulate" data-zh="— 组织图谱 · 公设"></p>
+  </div>
+</section>
+
+<!-- MODULE 4 — COLLECTIVE INTELLIGENCE -->
+<section id="intelligence">
+  <div class="wrap">
+    <div class="section-head">
+      <h4>Module 04 · <span data-en="Collective Intelligence" data-zh="集体智能"></span></h4>
+      <h2><span data-en="The crowd is sometimes smarter." data-zh="群体有时更聪明。"></span></h2>
+      <p class="lede"><span data-en="Three distinct mechanisms by which collective behavior produces decisions no single agent could reach. Each requires specific structural conditions — without them, the collective is just noise." data-zh="集体行为产出任何单一个体无法企及之决策的三种独特机制。每种机制都要求特定的结构条件 —— 无此条件，群体仅是噪声。"></span></p>
+    </div>
+
+    <div class="ci-stage">
+      <div class="ci-grid" id="ci-grid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 5 — SIMULATION -->
+<section id="simulation" style="background:linear-gradient(180deg,var(--night),var(--night-2),var(--night));">
+  <div class="wrap">
+    <div class="section-head">
+      <h4>Module 05 · <span data-en="Simulation Engine" data-zh="模拟引擎"></span></h4>
+      <h2><span data-en="See coordination happen." data-zh="亲眼看见协调发生。"></span></h2>
+      <p class="lede"><span data-en="Three modes — swarm (decentralized), leader (centralized), and network (peer-to-peer). 80 agents on a canvas, each following the rule of its mode. Watch how shape, speed, and stability differ." data-zh="三种模式 —— 群体（去中心化）、领袖（中心化）、网络（点对点）。画布上 80 个个体，各按其模式规则行动。观察形态、速度、稳定性如何不同。"></span></p>
+    </div>
+
+    <div class="sim-stage">
+      <div class="sim-controls">
+        <button class="sim-mode active" data-mode="swarm" data-en="Swarm · Decentralized" data-zh="群体 · 去中心化"></button>
+        <button class="sim-mode" data-mode="leader" data-en="Leader · Centralized" data-zh="领袖 · 中心化"></button>
+        <button class="sim-mode" data-mode="network" data-en="Network · Peer-to-Peer" data-zh="网络 · 点对点"></button>
+        <span style="margin-left:auto;display:flex;gap:8px;">
+          <button class="sim-btn primary" id="sim-play"><span data-en="▶ Play" data-zh="▶ 播放"></span></button>
+          <button class="sim-btn" id="sim-reset"><span data-en="Reset" data-zh="重置"></span></button>
+        </span>
+      </div>
+      <div class="sim-canvas-wrap"><canvas id="sim-canvas" width="1200" height="480"></canvas></div>
+      <div class="sim-stats" id="sim-stats"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 6 — TRADE-OFFS -->
+<section id="tradeoffs">
+  <div class="wrap">
+    <div class="section-head">
+      <h4>Module 06 · <span data-en="Trade-off Analyzer" data-zh="权衡分析"></span></h4>
+      <h2><span data-en="You cannot have both." data-zh="二者不可兼得。"></span></h2>
+      <p class="lede"><span data-en="Four foundational trade-offs that govern every organizational system. There is no organization that maximizes both ends — every form chooses a position. Knowing the trade-off makes the choice deliberate." data-zh="支配每个组织系统的四个基础权衡。没有一种组织能同时最大化两端 —— 每种形态都在中间选择一个位置。识别权衡，使选择变得审慎。"></span></p>
+    </div>
+
+    <div class="to-stage" id="to-stage"></div>
+  </div>
+</section>
+
+<!-- MODULE 7 — COMPARE -->
+<section id="compare" style="background:linear-gradient(180deg,var(--night),var(--night-2),var(--night));">
+  <div class="wrap">
+    <div class="section-head">
+      <h4>Module 07 · <span data-en="Cross-System Comparison" data-zh="跨系统对比"></span></h4>
+      <h2><span data-en="Two systems, eight axes, one synthesis." data-zh="两系统，八维度，一综合。"></span></h2>
+      <p class="lede"><span data-en="Picking ants vs blockchain, or chimpanzees vs AI agents, surfaces unexpected isomorphisms — and the genuinely novel features of the digital era. The synthesis cell at the bottom names the deepest shared structure." data-zh="将蚂蚁与区块链、黑猩猩与 AI 智能体并列，浮现出意外的同构 —— 与数字时代真正新颖的特征。底部的综合行命名最深层的共享结构。"></span></p>
+    </div>
+
+    <div class="cmp-stage">
+      <div class="cmp-pickers">
+        <div class="cmp-pick">
+          <label data-en="System A" data-zh="系统 A"></label>
+          <select id="cmp-a"></select>
+        </div>
+        <div class="cmp-vs" data-en="vs" data-zh="对"></div>
+        <div class="cmp-pick">
+          <label data-en="System B" data-zh="系统 B"></label>
+          <select id="cmp-b"></select>
+        </div>
+      </div>
+      <div id="cmp-table"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 8 — DESIGN PRINCIPLES -->
+<section id="principles">
+  <div class="wrap">
+    <div class="section-head">
+      <h4>Module 08 · <span data-en="Reusable Design Principles" data-zh="可复用设计原理"></span></h4>
+      <h2><span data-en="Patterns that work in any substrate." data-zh="跨衬底通用的模式。"></span></h2>
+      <p class="lede"><span data-en="Six principles, generalized across the eleven systems, that you can apply when designing a team, a protocol, an AI agent system, or a community. Each carries the biological and the human/technical case it generalizes from." data-zh="六条原理，跨十一种系统抽象而成，可在你设计团队、协议、AI 代理体系或社区时使用。每条都携带其据以推广的生物案例与人类 / 技术案例。"></span></p>
+    </div>
+
+    <div class="dp-stage" id="dp-stage"></div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap">
+    <p class="strip-quote">
+      <span data-en="The right <span class='accent'>shape</span> for a problem<br>was already <span class='accent'>solved</span> by something with no brain." data-zh="某个问题正确的<span class='accent'>形状</span>，<br>早被某种<span class='accent'>无脑</span>之物解出。"></span>
+    </p>
+    <p class="strip-attr" data-en="— Organization Atlas · Coda" data-zh="— 组织图谱 · 尾声"></p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="brand" style="margin-bottom:18px;">
+        <div class="brand-mark"></div>
+        <div class="brand-text">
+          <span data-en="Organization Atlas" data-zh="组织图谱"></span>
+          <small data-en="Cross-species systems lab" data-zh="跨物种系统实验室"></small>
+        </div>
+      </div>
+      <p style="color:var(--bone-2);font-size:.92rem;max-width:340px;line-height:1.7;font-style:italic;" data-en="A cross-species comparison engine for organization itself. Part of the Psyverse portfolio." data-zh="一台关于组织本身的跨物种比较引擎。Psyverse 矩阵的一员。"></p>
+    </div>
+    <div class="foot-col">
+      <h5 data-en="Modules" data-zh="模块"></h5>
+      <a href="#types" data-en="Types Library" data-zh="类型库"></a>
+      <a href="#dimensions" data-en="Dimensions" data-zh="维度"></a>
+      <a href="#coordination" data-en="Coordination" data-zh="协调"></a>
+      <a href="#intelligence" data-en="Intelligence" data-zh="智能"></a>
+      <a href="#simulation" data-en="Simulation" data-zh="模拟"></a>
+      <a href="#principles" data-en="Principles" data-zh="原理"></a>
+    </div>
+    <div class="foot-col">
+      <h5 data-en="Sister Sites" data-zh="姊妹站点"></h5>
+      <a href="https://grassland.psyverse.fun" data-en="Grassland Atlas" data-zh="草原图谱"></a>
+      <a href="https://surnames.psyverse.fun" data-en="Surname Atlas" data-zh="中华姓氏图谱"></a>
+      <a href="https://reality.psyverse.fun" data-en="Reality Explorer" data-zh="现实解析器"></a>
+      <a href="https://mirror.psyverse.fun" data-en="Humanity Mirror" data-zh="人类之镜"></a>
+    </div>
+    <div class="foot-col">
+      <h5 data-en="Network" data-zh="网络"></h5>
+      <a href="https://psyverse.fun">Psyverse</a>
+      <a href="https://github.com/gewenbo888/organization-atlas">GitHub</a>
+      <a href="mailto:gewenbo84@gmail.com">Contact</a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 Psyverse · Organization Atlas · 组织图谱</span>
+    <span data-en="Built by Gewenbo (戈文波) · v1.0" data-zh="戈文波 制作 · v1.0"></span>
+  </div>
+</footer>
+
+<script>
+/* ════════════════════════ DATA ════════════════════════ */
+
+const TYPES = [
+  // [id, kind, name_en, name_zh, scientific, scale, comm, decision, fitness, dims (6: hierarchy, comm, speed, conflict_tol, scale, robust)]
+  { id:'bee', kind:'swarm', name:{en:'Honey Bee Colony', zh:'蜜蜂群体'}, sci:'Apis mellifera',
+    desc:{en:'A eusocial superorganism. ~50,000 sisters, one queen, division of labor by age. Site selection ("nest hunt") is a textbook collective-intelligence algorithm: scouts argue with waggle dances until consensus thresholds.', zh:'真社会性的超个体。约 5 万只姐妹、一只蜂王、按年龄分工。新巢选址（"nest hunt"）是教科书式的集体智能算法：侦察蜂以摇摆舞辩论，直至共识阈值达到。'},
+    stats:[{k:{en:'Scale',zh:'规模'},v:'~50K'},{k:{en:'Comm',zh:'通信'},v:{en:'Pheromone+dance',zh:'信息素+舞蹈'}}],
+    dims:[3,7,5,2,4,9] },
+  { id:'ant', kind:'swarm', name:{en:'Ant Colony', zh:'蚂蚁群体'}, sci:'Formicidae spp.',
+    desc:{en:'Stigmergy at scale. Workers leave pheromone trails; the trail strength is the consensus signal. No central planner — the colony is the algorithm. Some species form supercolonies of millions across continents.', zh:'规模化的"间接协调"。工蚁留下信息素痕迹；痕迹强度即共识信号。无中央规划者 —— 蚁群本身就是算法。某些种形成跨大陆的数百万只超群。'},
+    stats:[{k:{en:'Scale',zh:'规模'},v:'1K–10M'},{k:{en:'Comm',zh:'通信'},v:{en:'Pheromone trails',zh:'信息素轨迹'}}],
+    dims:[2,8,6,1,10,10] },
+  { id:'whale', kind:'pod', name:{en:'Sperm Whale Pod', zh:'抹香鲸群'}, sci:'Physeter macrocephalus',
+    desc:{en:'Matrilineal pods of 10-30 related females and calves. Males disperse. Vocal "codas" are family-specific dialects passed culturally — the only known non-human cultural transmission tied directly to social identity.', zh:'10-30 只母系亲属与幼鲸组成的母系族群。雄性分散。"叩答"叫声为家族特有方言，文化传承 —— 已知唯一一种与社会身份直接相关的非人文化传播。'},
+    stats:[{k:{en:'Scale',zh:'规模'},v:'10–30'},{k:{en:'Comm',zh:'通信'},v:{en:'Vocal codas',zh:'声学叩答'}}],
+    dims:[5,5,4,4,2,7] },
+  { id:'tree', kind:'plant', name:{en:'Tree Root Network', zh:'树根网络'}, sci:'Mycorrhizal symbiosis',
+    desc:{en:'Trees in a forest are connected through mycorrhizal fungi forming the "wood wide web." Older trees subsidize seedlings with carbon and nitrogen via the fungal network. The forest is, in a real sense, a single distributed computer.', zh:'森林中的树木通过菌根真菌相连，形成"木维网"。年长树木通过真菌网络以碳氮补贴幼苗。森林在真实意义上是一台分布式计算机。'},
+    stats:[{k:{en:'Scale',zh:'规模'},v:'10–10K'},{k:{en:'Comm',zh:'通信'},v:{en:'Chemical · fungal',zh:'化学 · 真菌'}}],
+    dims:[1,4,1,9,8,9] },
+  { id:'mycelium', kind:'plant', name:{en:'Mycelium Network', zh:'菌丝网络'}, sci:'Armillaria & spp.',
+    desc:{en:'Fungal mycelium is the largest known organism on Earth: an Armillaria network in Oregon covers 9.6 km². Distributed processing across kilometers of branching threads, optimized for nutrient transport.', zh:'真菌菌丝是地球上已知最大的生物：俄勒冈州一片蜜环菌网络覆盖 9.6 km²。在数公里分支细丝中分布式处理，为营养运输优化。'},
+    stats:[{k:{en:'Scale',zh:'规模'},v:{en:'km-scale',zh:'公里级'}},{k:{en:'Comm',zh:'通信'},v:{en:'Chemical · electric',zh:'化学 · 电信号'}}],
+    dims:[1,3,1,10,10,10] },
+  { id:'potato', kind:'plant', name:{en:'Potato Tuber System', zh:'马铃薯块茎系统'}, sci:'Solanum tuberosum',
+    desc:{en:'A clonal underground network. Each tuber is a genetically identical copy connected by stolons. Total redundancy: cut any tuber and the rest survives. Designed by selection for famine resistance — and for a particular kind of human-cooperative dispersal.', zh:'地下克隆网络。每个块茎都是通过匍匐茎相连的遗传相同副本。完全冗余：切除任意块茎，其余存活。被选择设计为抗饥荒 —— 也适应一种特定的人类协作扩散。'},
+    stats:[{k:{en:'Scale',zh:'规模'},v:{en:'~5–20 tubers',zh:'约 5-20 块茎'}},{k:{en:'Comm',zh:'通信'},v:{en:'Vascular',zh:'维管束'}}],
+    dims:[1,2,1,10,3,8] },
+  { id:'chimp', kind:'primate', name:{en:'Chimpanzee Troop', zh:'黑猩猩群'}, sci:'Pan troglodytes',
+    desc:{en:'Male-dominated, 20-150 individuals, fission-fusion subgroups. Coalitional politics, alpha hierarchy, lethal between-group conflict. Closest non-human approximation to human political organization.', zh:'雄性主导，20-150 只，裂合亚群结构。结盟政治、α 等级、群间致命冲突。与人类政治组织最接近的非人类参照。'},
+    stats:[{k:{en:'Scale',zh:'规模'},v:'20–150'},{k:{en:'Comm',zh:'通信'},v:{en:'Vocal+gesture',zh:'声+姿态'}}],
+    dims:[8,4,7,8,3,5] },
+  { id:'bonobo', kind:'primate', name:{en:'Bonobo Community', zh:'倭黑猩猩群'}, sci:'Pan paniscus',
+    desc:{en:'Female-dominated, peace-favoring, sexual conflict-resolution. Same DNA distance from humans as chimps, opposite social structure. Demonstrates that "human nature" is broader than chimpanzee politics suggests.', zh:'雌性主导、偏好和平、以性化解冲突。与人类的 DNA 距离与黑猩猩相同，社会结构却相反。证明"人性"比黑猩猩政治所暗示的更宽。'},
+    stats:[{k:{en:'Scale',zh:'规模'},v:'30–80'},{k:{en:'Comm',zh:'通信'},v:{en:'Vocal+touch',zh:'声+触'}}],
+    dims:[5,5,5,3,3,7] },
+  { id:'corp', kind:'human', name:{en:'Modern Corporation', zh:'现代公司'}, sci:'L. corporatus',
+    desc:{en:'A legal fiction with the hierarchical structure of a small army and the lifespan of an underwhelming oak tree. Coordinates 10s to 100,000s of strangers via salary, contracts, and institutional culture.', zh:'一种具有小型军队层级结构、寿命如普通橡树的法律虚构。通过工资、合同、制度文化协调 10 至 10 万陌生人。'},
+    stats:[{k:{en:'Scale',zh:'规模'},v:'10–100K'},{k:{en:'Comm',zh:'通信'},v:{en:'Mtg+email+chat',zh:'会议+邮件+聊天'}}],
+    dims:[9,5,7,5,7,4] },
+  { id:'blockchain', kind:'digital', name:{en:'Public Blockchain', zh:'公链'}, sci:'Distributed ledger',
+    desc:{en:'Coordination of strangers via cryptographic consensus. No central authority; rules are enforced by code; every node verifies. Slow, expensive, exceptionally robust against single-point failure or capture.', zh:'通过密码学共识协调陌生人。无中央权威；规则由代码强制执行；每节点验证。慢、贵，但对单点失败或捕获极为稳健。'},
+    stats:[{k:{en:'Scale',zh:'规模'},v:{en:'1K–100K nodes',zh:'1K-100K 节点'}},{k:{en:'Comm',zh:'通信'},v:{en:'Cryptographic gossip',zh:'密码学流言'}}],
+    dims:[1,4,2,10,9,10] },
+  { id:'ai-swarm', kind:'digital', name:{en:'AI Agent Swarm', zh:'AI 智能体群'}, sci:'Multi-agent LLM system',
+    desc:{en:'A new and rapidly-evolving category. Multiple LLM-based agents specialize and exchange messages to solve a task. Combines the speed of digital coordination with something approaching general intelligence per agent.', zh:'一个新兴且快速演化的类别。多个基于大语言模型的智能体分工并交换信息以解决任务。结合数字协调的速度与近乎通用智能的每代理能力。'},
+    stats:[{k:{en:'Scale',zh:'规模'},v:'2–50'},{k:{en:'Comm',zh:'通信'},v:{en:'Natural language',zh:'自然语言'}}],
+    dims:[4,9,9,4,5,5] },
+];
+
+const KIND_LABELS = {
+  swarm:    { en:'Swarm',     zh:'群体' },
+  pod:      { en:'Pod / Network', zh:'族群 / 网络' },
+  plant:    { en:'Plant / Distributed', zh:'植物 / 分布式' },
+  primate:  { en:'Primate',   zh:'灵长类' },
+  human:    { en:'Human',     zh:'人类' },
+  digital:  { en:'Digital',   zh:'数字' },
+};
+
+const DIM_NAMES = [
+  { en:'Hierarchy', zh:'层级' },
+  { en:'Comm bandwidth', zh:'通信带宽' },
+  { en:'Decision speed', zh:'决策速度' },
+  { en:'Conflict tolerance', zh:'冲突容忍' },
+  { en:'Scalability', zh:'可扩展性' },
+  { en:'Robustness', zh:'稳健性' },
+];
+
+const COORD = [
+  { kind:'chem', name:{en:'Pheromone & Chemical', zh:'信息素与化学'},
+    examples:{en:'ants, bees, root systems, fungi', zh:'蚂蚁、蜜蜂、根系、真菌'},
+    desc:{en:'A chemical signal deposited in the environment, decaying over time. Self-reinforcing if useful (more ants → stronger trail), self-erasing if not (no ants → trail evaporates). Stigmergy: the medium IS the memory.', zh:'沉积于环境中、随时间衰减的化学信号。有用则自我强化（更多蚂蚁 → 更强轨迹），无用则自我消失（无蚂蚁 → 轨迹蒸发）。"间接协调"：媒介本身即为记忆。'},
+    props:[{k:{en:'BW',zh:'带宽'},v:'low'},{k:{en:'Range',zh:'范围'},v:{en:'meters–km',zh:'米–公里'}},{k:{en:'Memory',zh:'记忆'},v:{en:'in medium',zh:'于媒介'}}] },
+  { kind:'vocal', name:{en:'Vocal & Acoustic', zh:'声学与发声'},
+    examples:{en:'whales, primates, songbirds, humans', zh:'鲸、灵长类、鸣禽、人类'},
+    desc:{en:'Air- or water-borne sound waves carrying frequency-encoded information. High bandwidth per second, but ephemeral — vanishes after the broadcast. Privileges species with neurological apparatus for fine sound production and recognition.', zh:'空气或水中传播的、以频率编码信息的声波。每秒带宽高，但易逝 —— 广播后即消失。偏向具备精细发声与识别神经装置的物种。'},
+    props:[{k:{en:'BW',zh:'带宽'},v:'high'},{k:{en:'Range',zh:'范围'},v:{en:'m–10s km (water)',zh:'米–几十公里（水中）'}},{k:{en:'Memory',zh:'记忆'},v:'none'}] },
+  { kind:'touch', name:{en:'Social Bonding & Touch', zh:'社交联结与触觉'},
+    examples:{en:'primates, elephants, humans, dogs', zh:'灵长类、大象、人类、犬'},
+    desc:{en:'Grooming, hugging, nursing, deference rituals. Slow, low-bandwidth, but uniquely high-trust. Most primate hierarchies are negotiated this way. Human handshakes and hugs inherit directly from this lineage.', zh:'梳理、拥抱、哺育、敬礼仪式。慢、低带宽，但独有的高信任性。大多数灵长类等级以此协商。人类握手与拥抱直接继承自这一谱系。'},
+    props:[{k:{en:'BW',zh:'带宽'},v:'medium'},{k:{en:'Range',zh:'范围'},v:{en:'arm-length',zh:'臂长'}},{k:{en:'Memory',zh:'记忆'},v:{en:'in body+brain',zh:'于身体+大脑'}}] },
+  { kind:'signal', name:{en:'Visual Signals & Display', zh:'视觉信号与展示'},
+    examples:{en:'bees (waggle dance), fireflies, peacocks, traffic lights', zh:'蜜蜂（摇摆舞）、萤火虫、孔雀、红绿灯'},
+    desc:{en:'Spatial or temporal patterns of light/movement encoding information. Honey bee waggle dance is the most precise — direction relative to sun, distance encoded in dance duration. Synchrony emerges in firefly fields without any leader.', zh:'编码信息的光线 / 运动的空间或时序图样。蜜蜂摇摆舞最为精确 —— 方向相对太阳、距离编码于舞蹈时长。萤火虫之野无须领袖即同步。'},
+    props:[{k:{en:'BW',zh:'带宽'},v:'medium'},{k:{en:'Range',zh:'范围'},v:{en:'line-of-sight',zh:'视线范围'}},{k:{en:'Memory',zh:'记忆'},v:'none'}] },
+  { kind:'digital', name:{en:'Digital & Symbolic', zh:'数字与符号'},
+    examples:{en:'humans (writing), corporations, blockchains, AI agents', zh:'人类（文字）、公司、区块链、AI 智能体'},
+    desc:{en:'Discrete, error-corrected, infinitely-copyable symbol streams. The newest mechanism evolutionarily, the most powerful. Can carry both content and meta-content (rules about rules). Native medium of every human civilization since writing.', zh:'离散、含纠错、可无限复制的符号流。演化上最新、表达力最强。可承载内容与元内容（规则之规则）。文字以来每一种人类文明的本土媒介。'},
+    props:[{k:{en:'BW',zh:'带宽'},v:{en:'very high',zh:'极高'}},{k:{en:'Range',zh:'范围'},v:{en:'global',zh:'全球'}},{k:{en:'Memory',zh:'记忆'},v:{en:'permanent',zh:'永久'}}] },
+];
+
+const CI = [
+  { lbl:{en:'WISDOM OF CROWDS', zh:'群体之智'},
+    name:{en:'Independent aggregation', zh:'独立聚合'},
+    desc:{en:'When many independent estimators are averaged, individual errors cancel out — the mean approaches the true value with surprising accuracy. Galton\'s ox weight (1907), prediction markets, juries.', zh:'多名独立估计者的平均值，使个体误差相互抵消 —— 均值出乎意料地接近真值。Galton 的牛重（1907）、预测市场、陪审团。'},
+    case:{en:'<b>Required:</b> independence (no copying), diversity, judgment-aggregation mechanism.', zh:'<b>条件：</b>独立性（不互相抄袭）、多样性、判断聚合机制。'} },
+  { lbl:{en:'STIGMERGY', zh:'间接协调'},
+    name:{en:'Coordination via medium', zh:'借助媒介协调'},
+    desc:{en:'Agents modify the environment; the environment carries information for the next agent. No direct communication needed. Ant trails, Wikipedia edits, source-code commits, market prices — all stigmergic.', zh:'个体修改环境；环境为下一位个体携带信息。无需直接通信。蚁迹、维基百科编辑、源代码提交、市场价格 —— 皆为间接协调。'},
+    case:{en:'<b>Required:</b> persistent shared medium that records action.', zh:'<b>条件：</b>记录行动的持久共享媒介。'} },
+  { lbl:{en:'SWARM OPTIMIZATION', zh:'群体优化'},
+    name:{en:'Distributed search', zh:'分布式搜索'},
+    desc:{en:'Many simple agents explore solution space in parallel; share via simple feedback. Honeybee nest selection, particle-swarm optimization, gradient descent in neural networks (mathematically related). Finds good-enough solutions in massive search spaces fast.', zh:'许多简单个体并行探索解空间；通过简单反馈共享。蜜蜂选巢、粒子群优化、神经网络梯度下降（数学上相关）。在巨大搜索空间中迅速找到足够好的解。'},
+    case:{en:'<b>Required:</b> scoreable problem, parallel evaluation, feedback channel.', zh:'<b>条件：</b>可评分问题、并行评估、反馈通道。'} },
+];
+
+const TRADEOFFS = [
+  { left:{n:{en:'Efficiency',zh:'效率'},sub:{en:'min cost, max output',zh:'最小成本、最大产出'}},
+    right:{n:{en:'Flexibility',zh:'灵活'},sub:{en:'adapts to surprises',zh:'适应意外'}},
+    desc:{en:'Highly efficient organizations are tuned to one regime. They break when the regime changes. Highly flexible organizations carry slack — they handle surprises but spend more in the average year.', zh:'极高效的组织针对单一情境调校。情境一变即崩。极灵活的组织保留冗余 —— 应对意外，但平均年消耗更高。'},
+    examples:{en:'<b>Efficient:</b> ant colony, factory production line. <b>Flexible:</b> bonobo community, startup.', zh:'<b>效率型：</b>蚁群、工厂流水线。<b>灵活型：</b>倭黑猩猩群、初创公司。'} },
+  { left:{n:{en:'Centralization',zh:'集中化'},sub:{en:'fast, single-leader',zh:'快、单一领导'}},
+    right:{n:{en:'Resilience',zh:'韧性'},sub:{en:'survives any node loss',zh:'任意节点失效仍存'}},
+    desc:{en:'A central command makes fast coherent decisions but the whole system fails when the center is taken out. A fully decentralized system survives any single failure but is slower and less coherent in crises.', zh:'中央指挥能做出快速一致的决策，但中心被取走则整体失败。完全去中心化系统能在任何单点失败下存活，但在危机中更慢、更不一致。'},
+    examples:{en:'<b>Centralized:</b> chimp troop, military, monarchy. <b>Resilient:</b> blockchain, mycelium.', zh:'<b>集中型：</b>黑猩猩群、军队、君主制。<b>韧性型：</b>区块链、菌丝网。'} },
+  { left:{n:{en:'Speed',zh:'速度'},sub:{en:'fast decisions',zh:'决策快'}},
+    right:{n:{en:'Robustness',zh:'稳健'},sub:{en:'survives long-term shocks',zh:'承受长期冲击'}},
+    desc:{en:'Speed and robustness are usually at odds. Fast organizations skip the consensus-building that creates buy-in and error-correction; robust organizations spend most of their time talking and don\'t reach decisions in time.', zh:'速度与稳健常常对立。快速组织跳过形成共识与纠错的过程；稳健组织把多数时间花在讨论上，决策不及时。'},
+    examples:{en:'<b>Fast:</b> CEO-led firm, AI agent swarm. <b>Robust:</b> blockchain, ant supercolony.', zh:'<b>快速型：</b>CEO 主导企业、AI 群体。<b>稳健型：</b>区块链、超大型蚁群。'} },
+  { left:{n:{en:'Specialization',zh:'专门化'},sub:{en:'each agent has one role',zh:'每个个体一种角色'}},
+    right:{n:{en:'Generalism',zh:'通才化'},sub:{en:'each agent does many things',zh:'每个个体多用'}},
+    desc:{en:'Specialization extracts more value per agent but creates fragility — lose one specialist class, lose a function. Generalism is wasteful at the agent level but the system survives any single loss.', zh:'专门化每个个体提取更多价值，但带来脆弱性 —— 失一类专门，丢一项功能。通才化在个体层面浪费，但系统能承受任何单一失去。'},
+    examples:{en:'<b>Specialized:</b> bee colony, hospital. <b>Generalist:</b> hunter-gatherer band, small startup.', zh:'<b>专门型：</b>蜂群、医院。<b>通才型：</b>狩猎采集群体、小型创业团队。'} },
+];
+
+const PRINCIPLES = [
+  { num:'P1', principle:{en:'Match coordination overhead to task variance.', zh:'让协调开销匹配任务方差。'},
+    desc:{en:'Repetitive tasks tolerate slow consensus. High-variance tasks need either fast central decisions OR very high autonomy + tight feedback. Pick the wrong shape and you waste energy.', zh:'重复性任务容忍慢共识。高方差任务需要快速中央决策 OR 极高自主性 + 紧反馈。选错形状即浪费能量。'},
+    from:{en:'<b>From:</b> bee swarm (slow but accurate selection) vs chimp troop (fast leader response).', zh:'<b>源自：</b>蜂群（慢但准的选址） vs 黑猩猩群（快速领袖响应）。'} },
+  { num:'P2', principle:{en:'Stigmergy beats meetings.', zh:'间接协调胜过会议。'},
+    desc:{en:'Whenever possible, let the medium remember. Code repos, ticket systems, shared docs are all stigmergic. Replacing meetings with persistent artifacts scales much better and creates an audit trail.', zh:'尽可能让媒介承担记忆。代码仓库、工单系统、共享文档都是间接协调。以持久产物取代会议，能更好地扩展并产生审计轨迹。'},
+    from:{en:'<b>From:</b> ant pheromone trails. <b>Now:</b> Git, Slack threads, Wikipedia.', zh:'<b>源自：</b>蚂蚁信息素轨迹。<b>今为：</b>Git、Slack 线程、维基百科。'} },
+  { num:'P3', principle:{en:'Diversity > headcount.', zh:'多样性 > 头数。'},
+    desc:{en:'Wisdom-of-crowds requires <em>independent</em> errors. Adding more people who all think alike does nothing. The most valuable hire is often the person whose error is uncorrelated with everyone else\'s.', zh:'群体之智要求<em>独立</em>的误差。添加同质化的人毫无帮助。最有价值的招聘往往是那位其误差与他人不相关的人。'},
+    from:{en:'<b>From:</b> Galton\'s ox-weight crowd. <b>Now:</b> hiring rubrics, prediction markets.', zh:'<b>源自：</b>Galton 的牛重群体。<b>今为：</b>招聘评分表、预测市场。'} },
+  { num:'P4', principle:{en:'Plan for graceful degradation, not perfect uptime.', zh:'设计为优雅降级，而非完美在线。'},
+    desc:{en:'No system runs forever. The question is what happens when nodes fail. Mycelium survives any cut; a single CEO does not. Build organizations that lose function gracefully, not systems that try to lose nothing.', zh:'没有系统能永远运行。问题是节点失效时会怎样。菌丝网能承受任何剪切；单一 CEO 不能。建造能优雅失去功能的组织，而非试图不失去任何东西的系统。'},
+    from:{en:'<b>From:</b> mycelium, blockchain. <b>Now:</b> microservices, distributed teams.', zh:'<b>源自：</b>菌丝网、区块链。<b>今为：</b>微服务、分布式团队。'} },
+  { num:'P5', principle:{en:'Make the rules explicit; let the agents be autonomous.', zh:'规则显式化；让个体自主。'},
+    desc:{en:'Bee colonies have ~12 simple rules and 50,000 autonomous bees. Most failed bureaucracies have ~50,000 rules and 12 actually-autonomous people. The first scales, the second collapses.', zh:'蜂群约 12 条简单规则与 5 万只自主蜜蜂。多数失败的官僚体系有约 5 万条规则与 12 个真正自主的人。前者可扩展，后者会崩。'},
+    from:{en:'<b>From:</b> all swarms. <b>Now:</b> open-source projects, cellular automata, RFC processes.', zh:'<b>源自：</b>所有群体。<b>今为：</b>开源项目、元胞自动机、RFC 流程。'} },
+  { num:'P6', principle:{en:'Communicate at the right level; not above it, not below it.', zh:'在正确的层级通信；不高也不低。'},
+    desc:{en:'Trees use chemical signals because they don\'t need vocal cords. Whales use sound because they live underwater. Companies use email because the agents can read. Match the medium to the agent\'s actual needs — overcommunication wastes energy, undercommunication breaks coordination.', zh:'树用化学信号是因为不需要声带。鲸用声音是因为生活水中。公司用邮件是因为个体能读。让媒介匹配个体真实需求 —— 过度通信浪费能量，不足通信打破协调。'},
+    from:{en:'<b>From:</b> all systems compared. <b>Now:</b> protocol design, agent architectures, team rituals.', zh:'<b>源自：</b>所有对比的系统。<b>今为：</b>协议设计、智能体架构、团队仪式。'} },
+];
+
+/* ════════════════════════ I18N ════════════════════════ */
+function isZh(){ return document.body.classList.contains('zh'); }
+function applyLang(lang){
+  document.body.classList.toggle('zh', lang==='zh');
+  localStorage.setItem('oa-lang', lang);
+  document.documentElement.lang = lang==='zh' ? 'zh-CN' : 'en';
+  document.getElementById('lang-btn').textContent = lang==='zh' ? 'EN' : '中文';
+  document.querySelectorAll('[data-en], [data-zh]').forEach(el=>{
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
+    const txt = lang==='zh' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
+    if (txt != null) el.innerHTML = txt;
+  });
+  renderTypesFilter(); renderTypes(); renderDimPickers(); renderDim(); renderCoord(); renderCI(); renderTradeoffs(); renderCmpPickers(); renderCmp(); renderPrinciples();
+}
+document.getElementById('lang-btn').onclick=()=>applyLang(isZh()?'en':'zh');
+
+/* ════════════════════════ MODULE 1 — TYPES ════════════════════════ */
+let curKindFilter = 'all';
+function renderTypesFilter(){
+  const lang = isZh()?'zh':'en';
+  const kinds = ['all', ...Object.keys(KIND_LABELS)];
+  document.getElementById('types-filter').innerHTML = kinds.map(k=>
+    `<button class="tf ${k===curKindFilter?'active':''}" data-k="${k}">${k==='all'?(lang==='zh'?'全部':'All'):KIND_LABELS[k][lang]}</button>`).join('');
+  document.querySelectorAll('.tf').forEach(b=>b.onclick=()=>{ curKindFilter=b.dataset.k; renderTypesFilter(); renderTypes(); });
+}
+function renderTypes(){
+  const lang = isZh()?'zh':'en';
+  const list = curKindFilter==='all' ? TYPES : TYPES.filter(t=>t.kind===curKindFilter);
+  document.getElementById('types-grid').innerHTML = list.map(t=>`
+    <div class="type-card ${t.kind}">
+      <div class="kind">${KIND_LABELS[t.kind][lang]}</div>
+      <h5>${t.name[lang]}</h5>
+      <div class="scientific">${t.sci}</div>
+      <p>${t.desc[lang]}</p>
+      <div class="stats">
+        ${t.stats.map(s=>`<div class="type-stat"><div class="k">${s.k[lang]}</div><div class="v">${typeof s.v==='object'?s.v[lang]:s.v}</div></div>`).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ════════════════════════ MODULE 2 — DIMENSIONS RADAR ════════════════════════ */
+let dimA = 'ant', dimB = 'corp';
+function renderDimPickers(){
+  const lang = isZh()?'zh':'en';
+  document.getElementById('dim-pickers-a').innerHTML = TYPES.map(t=>
+    `<button class="dim-pick ${t.id===dimA?'active':''}" data-id="${t.id}" data-side="a">${t.name[lang]}</button>`).join('');
+  document.getElementById('dim-pickers-b').innerHTML = TYPES.map(t=>
+    `<button class="dim-pick b ${t.id===dimB?'active':''}" data-id="${t.id}" data-side="b">${t.name[lang]}</button>`).join('');
+  document.querySelectorAll('.dim-pick').forEach(b=>b.onclick=()=>{
+    if (b.dataset.side==='a') dimA = b.dataset.id; else dimB = b.dataset.id;
+    renderDimPickers(); renderDim();
+  });
+}
+function renderDim(){
+  const lang = isZh()?'zh':'en';
+  const a = TYPES.find(t=>t.id===dimA), b = TYPES.find(t=>t.id===dimB);
+  const cx=240, cy=240, R=170;
+  const N = 6;
+  function pt(idx, val){
+    const angle = (idx / N) * 2 * Math.PI - Math.PI/2;
+    const r = (val / 10) * R;
+    return [cx + Math.cos(angle)*r, cy + Math.sin(angle)*r];
+  }
+  let html = '';
+  // Grid rings
+  [2,4,6,8,10].forEach(g=>{
+    const pts = Array.from({length:N},(_,i)=>pt(i,g)).map(p=>p.join(',')).join(' ');
+    html += `<polygon points="${pts}" fill="none" stroke="rgba(232,225,200,.08)" stroke-width="1"/>`;
+  });
+  // Axes
+  for (let i = 0; i < N; i++) {
+    const [x,y] = pt(i, 10);
+    html += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(232,225,200,.1)" stroke-width="1"/>`;
+    const [lx,ly] = pt(i, 11.5);
+    html += `<text x="${lx}" y="${ly+4}" text-anchor="middle" fill="#e8e1c8" font-family="JetBrains Mono" font-size="10" letter-spacing="1">${DIM_NAMES[i][lang]}</text>`;
+  }
+  // System A
+  const aPts = a.dims.map((v,i)=>pt(i,v).join(',')).join(' ');
+  html += `<polygon points="${aPts}" fill="rgba(168,201,127,.18)" stroke="#a8c97f" stroke-width="2.4"/>`;
+  a.dims.forEach((v,i)=>{ const [x,y] = pt(i,v); html += `<circle cx="${x}" cy="${y}" r="4" fill="#a8c97f"/>`; });
+  // System B
+  const bPts = b.dims.map((v,i)=>pt(i,v).join(',')).join(' ');
+  html += `<polygon points="${bPts}" fill="rgba(122,150,184,.16)" stroke="#7a96b8" stroke-width="2.4" stroke-dasharray="4 3"/>`;
+  b.dims.forEach((v,i)=>{ const [x,y] = pt(i,v); html += `<circle cx="${x}" cy="${y}" r="4" fill="#7a96b8"/>`; });
+  // Labels
+  html += `<text x="20" y="30" fill="#a8c97f" font-family="EB Garamond" font-size="14" font-weight="600">${a.name[lang]}</text>`;
+  html += `<text x="460" y="30" text-anchor="end" fill="#7a96b8" font-family="EB Garamond" font-size="14" font-weight="600">${b.name[lang]}</text>`;
+  document.getElementById('dim-svg').innerHTML = html;
+  // Axis legend
+  document.getElementById('dim-axes').innerHTML = DIM_NAMES.map((d,i)=>{
+    return `<div class="dim-axis-row">
+      <div class="name">${d[lang]}</div>
+      <div class="scale">
+        <span style="color:var(--moss);">${a.dims[i]}/10</span>
+        <span style="color:var(--bone-3);">${lang==='zh'?'对比':'vs'}</span>
+        <span style="color:var(--slate);">${b.dims[i]}/10</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ════════════════════════ MODULE 3 — COORDINATION ════════════════════════ */
+function renderCoord(){
+  const lang = isZh()?'zh':'en';
+  document.getElementById('coord-stage').innerHTML = COORD.map(c=>`
+    <div class="coord-card ${c.kind}">
+      <div class="kind">${c.kind.toUpperCase()}</div>
+      <h5>${c.name[lang]}</h5>
+      <div class="examples">${c.examples[lang]}</div>
+      <p>${c.desc[lang]}</p>
+      <div class="props">
+        ${c.props.map(p=>`<div class="coord-prop"><div class="k">${p.k[lang]}</div><div class="v">${typeof p.v==='object'?p.v[lang]:p.v}</div></div>`).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ════════════════════════ MODULE 4 — COLLECTIVE INTELLIGENCE ════════════════════════ */
+function renderCI(){
+  const lang = isZh()?'zh':'en';
+  document.getElementById('ci-grid').innerHTML = CI.map(c=>`
+    <div class="ci-card">
+      <div class="lbl">${c.lbl[lang]}</div>
+      <h5>${c.name[lang]}</h5>
+      <p>${c.desc[lang]}</p>
+      <div class="case">${c.case[lang]}</div>
+    </div>
+  `).join('');
+}
+
+/* ════════════════════════ MODULE 5 — SIMULATION ════════════════════════ */
+const simCanvas = document.getElementById('sim-canvas');
+const simCtx = simCanvas.getContext('2d');
+let simMode = 'swarm', simAgents = [], simRunning = false, simRaf = null, simTick = 0;
+const SIM_W = 1200, SIM_H = 480;
+
+function newAgents(){
+  simAgents = [];
+  const n = simMode === 'leader' ? 79 : 80;
+  for (let i = 0; i < n; i++) {
+    simAgents.push({
+      x: Math.random()*SIM_W, y: Math.random()*SIM_H,
+      vx: (Math.random()-.5)*2, vy: (Math.random()-.5)*2,
+      role: simMode === 'leader' ? 'follower' : 'agent',
+    });
+  }
+  if (simMode === 'leader') {
+    simAgents.push({ x:SIM_W/2, y:SIM_H/2, vx:1, vy:0, role:'leader' });
+  }
+  if (simMode === 'network') {
+    // Designate ~6 hubs
+    for (let i = 0; i < 6; i++) simAgents[i].role = 'hub';
+  }
+  simTick = 0;
+}
+
+function stepSim(){
+  if (simMode === 'swarm') {
+    // Boids-ish: alignment + cohesion + separation
+    simAgents.forEach(a=>{
+      let avx=0, avy=0, cx=0, cy=0, sx=0, sy=0, n=0, ns=0;
+      simAgents.forEach(b=>{
+        if (a===b) return;
+        const dx = b.x - a.x, dy = b.y - a.y, d2 = dx*dx + dy*dy;
+        if (d2 < 6400) { // ~80 px range
+          avx += b.vx; avy += b.vy; cx += b.x; cy += b.y; n++;
+          if (d2 < 400) { sx -= dx; sy -= dy; ns++; }
+        }
+      });
+      if (n > 0) {
+        a.vx += (avx/n - a.vx) * .04 + (cx/n - a.x) * .0005;
+        a.vy += (avy/n - a.vy) * .04 + (cy/n - a.y) * .0005;
+      }
+      if (ns > 0) { a.vx += sx * .015; a.vy += sy * .015; }
+      const speed = Math.sqrt(a.vx*a.vx + a.vy*a.vy);
+      const max = 2.2;
+      if (speed > max) { a.vx = a.vx/speed * max; a.vy = a.vy/speed * max; }
+      a.x += a.vx; a.y += a.vy;
+      if (a.x<0) a.x+=SIM_W; if (a.x>SIM_W) a.x-=SIM_W;
+      if (a.y<0) a.y+=SIM_H; if (a.y>SIM_H) a.y-=SIM_H;
+    });
+  } else if (simMode === 'leader') {
+    // Leader does sinusoidal patrol; followers chase leader
+    const leader = simAgents.find(a=>a.role==='leader');
+    leader.x += leader.vx; leader.y = SIM_H/2 + Math.sin(simTick * 0.02) * 100;
+    if (leader.x < 50 || leader.x > SIM_W - 50) leader.vx *= -1;
+    simAgents.forEach(a=>{
+      if (a.role === 'leader') return;
+      const dx = leader.x - a.x, dy = leader.y - a.y, d = Math.sqrt(dx*dx+dy*dy);
+      if (d > 50) { a.vx += (dx/d) * .2; a.vy += (dy/d) * .2; }
+      a.vx *= .92; a.vy *= .92;
+      a.x += a.vx; a.y += a.vy;
+    });
+  } else { // network
+    // Hubs orbit slowly; non-hubs gravitate to nearest hub
+    const hubs = simAgents.filter(a=>a.role==='hub');
+    hubs.forEach((h,i)=>{
+      const t = simTick * 0.005 + i * Math.PI/3;
+      h.x = SIM_W/2 + Math.cos(t) * (SIM_W * 0.3);
+      h.y = SIM_H/2 + Math.sin(t) * (SIM_H * 0.32);
+    });
+    simAgents.forEach(a=>{
+      if (a.role === 'hub') return;
+      // find nearest hub
+      let nh = hubs[0], minD = Infinity;
+      hubs.forEach(h=>{
+        const dx = h.x - a.x, dy = h.y - a.y, d2 = dx*dx + dy*dy;
+        if (d2 < minD) { minD = d2; nh = h; }
+      });
+      const dx = nh.x - a.x, dy = nh.y - a.y, d = Math.sqrt(dx*dx+dy*dy);
+      if (d > 60) { a.vx += (dx/d) * .15; a.vy += (dy/d) * .15; }
+      // Slight random
+      a.vx += (Math.random()-.5)*.3; a.vy += (Math.random()-.5)*.3;
+      a.vx *= .9; a.vy *= .9;
+      a.x += a.vx; a.y += a.vy;
+    });
+  }
+  simTick++;
+}
+
+function drawSim(){
+  simCtx.fillStyle = '#0e1410';
+  simCtx.fillRect(0,0,SIM_W,SIM_H);
+  // Connections in network mode
+  if (simMode === 'network') {
+    const hubs = simAgents.filter(a=>a.role==='hub');
+    hubs.forEach(h=>{
+      hubs.forEach(h2=>{
+        if (h===h2) return;
+        simCtx.strokeStyle = 'rgba(168,201,127,.18)';
+        simCtx.lineWidth = 0.6;
+        simCtx.beginPath(); simCtx.moveTo(h.x, h.y); simCtx.lineTo(h2.x, h2.y); simCtx.stroke();
+      });
+    });
+    simAgents.filter(a=>a.role!=='hub').forEach(a=>{
+      let nh = hubs[0], minD = Infinity;
+      hubs.forEach(h=>{
+        const dx = h.x - a.x, dy = h.y - a.y, d2 = dx*dx + dy*dy;
+        if (d2 < minD) { minD = d2; nh = h; }
+      });
+      simCtx.strokeStyle = 'rgba(232,225,200,.06)';
+      simCtx.lineWidth = 0.5;
+      simCtx.beginPath(); simCtx.moveTo(a.x, a.y); simCtx.lineTo(nh.x, nh.y); simCtx.stroke();
+    });
+  }
+  if (simMode === 'leader') {
+    const leader = simAgents.find(a=>a.role==='leader');
+    simAgents.forEach(a=>{
+      if (a.role === 'leader') return;
+      simCtx.strokeStyle = 'rgba(232,225,200,.05)';
+      simCtx.lineWidth = 0.5;
+      simCtx.beginPath(); simCtx.moveTo(a.x, a.y); simCtx.lineTo(leader.x, leader.y); simCtx.stroke();
+    });
+  }
+  // Agents
+  simAgents.forEach(a=>{
+    let r = 3, fill = '#a8c97f';
+    if (a.role === 'leader') { r = 8; fill = '#e0a04a'; }
+    else if (a.role === 'hub') { r = 6; fill = '#7a96b8'; }
+    simCtx.beginPath();
+    simCtx.arc(a.x, a.y, r, 0, Math.PI*2);
+    simCtx.fillStyle = fill;
+    simCtx.fill();
+  });
+  updateSimStats();
+}
+
+function updateSimStats(){
+  const lang = isZh()?'zh':'en';
+  // Compute centroid + spread
+  let cx=0, cy=0;
+  simAgents.forEach(a=>{ cx+=a.x; cy+=a.y; });
+  cx /= simAgents.length; cy /= simAgents.length;
+  let spread = 0;
+  simAgents.forEach(a=>{ const dx=a.x-cx, dy=a.y-cy; spread += Math.sqrt(dx*dx+dy*dy); });
+  spread = Math.round(spread / simAgents.length);
+  const cohesion = Math.max(0, Math.round(100 - spread/3));
+  const desc = {
+    swarm:{en:'Decentralized · emergent cohesion via local rules',zh:'去中心化 · 通过局部规则涌现凝聚'},
+    leader:{en:'Centralized · all agents follow the orange leader',zh:'中心化 · 所有个体追随橙色领袖'},
+    network:{en:'P2P · 6 blue hubs, agents gravitate to nearest',zh:'点对点 · 6 个蓝色枢纽，个体趋向最近者'},
+  };
+  document.getElementById('sim-stats').innerHTML = `
+    <div class="sim-stat"><div class="k">${lang==='zh'?'模式':'Mode'}</div><div class="v">${simMode.toUpperCase()}</div></div>
+    <div class="sim-stat"><div class="k">${lang==='zh'?'个体数':'Agents'}</div><div class="v">${simAgents.length}</div></div>
+    <div class="sim-stat"><div class="k">${lang==='zh'?'凝聚度':'Cohesion'}</div><div class="v">${cohesion}%</div></div>
+    <div class="sim-stat" style="grid-column:span 1;"><div class="k">${lang==='zh'?'刻':'Tick'}</div><div class="v">${simTick}</div></div>
+  `;
+}
+
+function simLoop(){
+  if (!simRunning) return;
+  stepSim(); drawSim();
+  simRaf = requestAnimationFrame(simLoop);
+}
+document.querySelectorAll('.sim-mode').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.sim-mode').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  simMode = b.dataset.mode;
+  newAgents(); drawSim();
+});
+document.getElementById('sim-play').onclick = ()=>{
+  simRunning = !simRunning;
+  document.getElementById('sim-play').innerHTML = simRunning
+    ? `<span data-en="❚❚ Pause" data-zh="❚❚ 暂停">${isZh()?'❚❚ 暂停':'❚❚ Pause'}</span>`
+    : `<span data-en="▶ Play" data-zh="▶ 播放">${isZh()?'▶ 播放':'▶ Play'}</span>`;
+  if (simRunning) simLoop();
+};
+document.getElementById('sim-reset').onclick = ()=>{ newAgents(); drawSim(); };
+
+/* ════════════════════════ MODULE 6 — TRADE-OFFS ════════════════════════ */
+function renderTradeoffs(){
+  const lang = isZh()?'zh':'en';
+  document.getElementById('to-stage').innerHTML = TRADEOFFS.map(t=>`
+    <div class="to-card">
+      <div class="axis">
+        <div class="left"><div class="name">${t.left.n[lang]}<small>${t.left.sub[lang]}</small></div></div>
+        <div class="vs">${lang==='zh'?'对':'vs'}</div>
+        <div class="right"><div class="name">${t.right.n[lang]}<small>${t.right.sub[lang]}</small></div></div>
+      </div>
+      <p>${t.desc[lang]}</p>
+      <div class="examples">${t.examples[lang]}</div>
+    </div>
+  `).join('');
+}
+
+/* ════════════════════════ MODULE 7 — COMPARE ════════════════════════ */
+function renderCmpPickers(){
+  const lang = isZh()?'zh':'en';
+  const opts = TYPES.map(t=>`<option value="${t.id}">${t.name[lang]}</option>`).join('');
+  const a = document.getElementById('cmp-a'), b = document.getElementById('cmp-b');
+  const ca = a.value || 'ant', cb = b.value || 'blockchain';
+  a.innerHTML = opts; b.innerHTML = opts;
+  a.value = ca; b.value = cb;
+  a.onchange = renderCmp; b.onchange = renderCmp;
+}
+function synthesize(a, b, lang){
+  // Heuristic synthesis based on overlap
+  const aDigital = a.kind==='digital', bDigital = b.kind==='digital';
+  const aBio = ['swarm','pod','plant','primate'].includes(a.kind), bBio = ['swarm','pod','plant','primate'].includes(b.kind);
+  if (aDigital && bBio || bDigital && aBio) {
+    return lang==='zh'
+      ? `这两者跨越了生物 / 数字鸿沟。共同结构：均通过<strong>媒介</strong>协调多个<strong>个体</strong>。差异在于媒介 —— 化学/声学 vs 符号 —— 而非组织本身。`
+      : `These bridge the bio/digital divide. Shared structure: both coordinate <strong>multiple agents</strong> via a <strong>medium</strong>. The difference is in the medium — chemical/acoustic vs symbolic — not in organization itself.`;
+  }
+  if (aBio && bBio) {
+    return lang==='zh'
+      ? `两者都是演化产物。其差异并非来自设计 —— 而是来自历史。每种形态在所适应的特定生态位中是局部最优的。`
+      : `Both are evolutionary products. Their differences are not from design — they are from history. Each form is locally optimal in the specific niche it evolved into.`;
+  }
+  if (aDigital && bDigital) {
+    return lang==='zh'
+      ? `两者都是<strong>显式设计</strong>的系统。共同模式：算法 + 协议 + 状态。两者代表组织设计中数字时代的不同点。`
+      : `Both are <strong>explicitly designed</strong> systems. Shared pattern: algorithm + protocol + state. Both represent different points in digital-era organizational design.`;
+  }
+  return lang==='zh'
+    ? `这两个系统在<strong>层级、规模、通信媒介</strong>上有所不同。请观察雷达图（模块 02）以查看其形状差异。`
+    : `These two systems differ on <strong>hierarchy, scale, and communication medium</strong>. See the radar (Module 02) for their shape difference.`;
+}
+function renderCmp(){
+  const lang = isZh()?'zh':'en';
+  const a = TYPES.find(t=>t.id===document.getElementById('cmp-a').value);
+  const b = TYPES.find(t=>t.id===document.getElementById('cmp-b').value);
+  if (!a||!b) return;
+  const axes = [
+    { k:{en:'Category', zh:'类别'}, va:KIND_LABELS[a.kind][lang], vb:KIND_LABELS[b.kind][lang] },
+    { k:{en:'Scale', zh:'规模'}, va:typeof a.stats[0].v==='object'?a.stats[0].v[lang]:a.stats[0].v, vb:typeof b.stats[0].v==='object'?b.stats[0].v[lang]:b.stats[0].v },
+    { k:{en:'Communication', zh:'通信'}, va:typeof a.stats[1].v==='object'?a.stats[1].v[lang]:a.stats[1].v, vb:typeof b.stats[1].v==='object'?b.stats[1].v[lang]:b.stats[1].v },
+    { k:{en:'Hierarchy (1-10)', zh:'层级 (1-10)'}, va:a.dims[0]+'/10', vb:b.dims[0]+'/10' },
+    { k:{en:'Decision speed (1-10)', zh:'决策速度 (1-10)'}, va:a.dims[2]+'/10', vb:b.dims[2]+'/10' },
+    { k:{en:'Scalability (1-10)', zh:'可扩展性 (1-10)'}, va:a.dims[4]+'/10', vb:b.dims[4]+'/10' },
+    { k:{en:'Robustness (1-10)', zh:'稳健性 (1-10)'}, va:a.dims[5]+'/10', vb:b.dims[5]+'/10' },
+    { k:{en:'Description', zh:'描述'}, va:a.desc[lang].slice(0,140)+'…', vb:b.desc[lang].slice(0,140)+'…' },
+  ];
+  document.getElementById('cmp-table').innerHTML = axes.map(ax=>`
+    <div class="cmp-row">
+      <div class="cmp-cell a">${ax.va}</div>
+      <div class="cmp-cell label">${ax.k[lang]}</div>
+      <div class="cmp-cell b">${ax.vb}</div>
+    </div>
+  `).join('') + `<div class="cmp-row" style="grid-template-columns:1fr;">
+    <div class="cmp-cell" style="background:linear-gradient(135deg,var(--night-2),var(--night-3));border-left:3px solid var(--moss);font-style:italic;color:var(--bone);font-size:1.04rem;line-height:1.7;">
+      <div style="font-family:var(--mono);font-size:.7rem;color:var(--moss);letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px;">${lang==='zh'?'综合':'SYNTHESIS'}</div>
+      ${synthesize(a, b, lang)}
+    </div>
+  </div>`;
+}
+
+/* ════════════════════════ MODULE 8 — PRINCIPLES ════════════════════════ */
+function renderPrinciples(){
+  const lang = isZh()?'zh':'en';
+  document.getElementById('dp-stage').innerHTML = PRINCIPLES.map(p=>`
+    <div class="dp-card">
+      <div class="num">PRINCIPLE · ${p.num}</div>
+      <div class="principle">"${p.principle[lang]}"</div>
+      <p>${p.desc[lang]}</p>
+      <div class="from">${p.from[lang]}</div>
+    </div>
+  `).join('');
+}
+
+/* ════════════════════════ INIT ════════════════════════ */
+applyLang(localStorage.getItem('oa-lang') || 'en');
+newAgents(); drawSim();
+
+const io = new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting && e.target.classList.add('in')), {threshold:.12});
+document.querySelectorAll('.section-head, .types-stage, .dim-stage, .coord-stage, .ci-stage, .sim-stage, .to-stage, .cmp-stage, .dp-stage').forEach(el=>{
+  el.classList.add('fadeup'); io.observe(el);
+});
+</script>
+</body>
+</html>
